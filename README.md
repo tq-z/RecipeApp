@@ -50,7 +50,7 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
    * Users can click on a recipe title to display the full recipe
 * Login
    * Users can login if they wish to post or like a recipe
-* Share
+* Create
     * User can capture the photo and post it
     * User can record the time they spend on this meal
     * User can rate the overall difficulty and record the most difficult part of this recipe
@@ -85,7 +85,7 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
    * Navigation to personal cookbooks page
    * Views and allows the creation and editing of your own personalized cookbooks
    * Allow users share their own recipes by multi-choice quickly
-* Share Screen
+* Create Screen
     * Here is a timeline of the User's past sharing.
     * Navigate to create a new one.
     * Navigate to Login Screen if they are not logged in
@@ -94,17 +94,88 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
     * Navigate to details of a recipe
 
 ## Wireframes
-<img src="https://i.imgur.com/YMbnPqm.png" width=600>
+[Add picture of your hand sketched wireframes in this section]
+<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+
+| Property     | Type            | Description                                 |
+| ------------ | --------------- |:------------------------------------------- |
+| objectId     | String          | unique id for the user post (default field) |
+| author       | Pointer to User | Recipe Author                               |
+| image        | File            | image that user posts                       |
+| recipe  name | String          | recipe's name                               |
+| description  | String          | recipe description                          |
+| post date    | date-time       | the time recipe created                     |
+| update date  | date-time       | the last time recipe updated                |
+| rating       | Int             |                                             |
+| ingredients  | String          | ingredients for recipe                      |
+| minutes      | float           | Cook time in minutes                        |
+| steps        | Array           | The recipe (steps are tab-separated).       |
+
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- 
+
+| CRUD    | HTTP Verb | Example                          |
+|:------- |:--------- |:-------------------------------- |
+| Create  | POST      | Creating a new post              |
+| Read    | GET       | Fetching posts for a user's feed |
+| Update  | PUT       | Changing a user's profile image  |
+| Delete  | DELETE    | Deleting a comment               |
+| Login   | Post      | User login                       |
+| Sign up | Post      | User sign up                     |
+| Logout  | GET       | User logout                      |
+|         |           |                                  |
+
+
+- Home Feed Screen
+    - (Read/GET) Query all posts with popular recipes
+   
+`ParseQuery<ParseObject> query =  ParseQuery.getQuery("Recipe");
+query.whereEqualTo("rating", 10);
+query.findInBackground(new FindCallback<ParseObject>() {
+    public void done(List<ParseObject> repcipeList, ParseException e) {
+        if (e == null) {
+            Log.d("recipe", "Retrieved " + recipeList.size() + " recipes");
+        } else {
+            Log.d("recipe", "Error: " + e.getMessage());
+        }
+    }
+});`
+
+    - (Create/POST) Create a new like on a post
+    - (Delete) Delete existing like
+- Create Post Screen
+    - (Create/POST) Create a new post object
+    
+   `ParseObject recipe = new ParseObject("Recipe");`
+    `recipe.put("recipeName", "Margherita Pizza");`
+    `recipe.put("description", "A Neapolitan pizza, made           with  San Marzano tomatoes, mozzarella cheese, fresh basil, salt, and extra-virgin olive oil.");`
+    `recipe.put("ingredients", "4 cloves garlic,
+    1 (14.5 ounce) can diced tomatoes,
+    2 tablespoons olive oil,
+    1 teaspoon granulated sugar,
+    1 teaspoon balsamic vinegar,
+    3/4 teaspoon salt,
+    1/8 teaspoon freshly ground black pepper");`
+    `recipe.put("steps", ArrayList<String> steps);`
+    `recipe.saveInBackground();`
+    
+    - (Delete) Delete existing recipe
+    
+    `// After this, the recipeName field will be empty
+    myObject.remove("recipeName");`
+    `// Saves the field deletion to your Parse Server
+    myObject.saveInBackground();`
+    
+- Profile Screen
+    - (Read/GET) Query logged in user recipes
+- Recipe Books Screen
+    - (Read/GET) Query all recipes that user added
