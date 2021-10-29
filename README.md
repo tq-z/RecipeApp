@@ -95,7 +95,7 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://i.imgur.com/3Ri1Bc2.png" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
