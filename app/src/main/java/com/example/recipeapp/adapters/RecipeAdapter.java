@@ -38,8 +38,8 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d("RecipeAdapter", "onCreateViewHolder");
-        View movieView = LayoutInflater.from(context).inflate(R.layout.item_recipe, parent, false);
-        return new ViewHolder(movieView);
+        View recipeView = LayoutInflater.from(context).inflate(R.layout.item_recipe, parent, false);
+        return new ViewHolder(recipeView);
     }
 
     // Involves populating data into the item through holder
@@ -76,7 +76,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         public void bind(Recipe recipe) {
             tvTitle.setText(recipe.getTitle());
             tvOverview.setText(recipe.getOverview());
-            String imageUrl;
+            //String imageUrl;
             // if phone is in landscape
             // if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             // then imageUrl = back drop image

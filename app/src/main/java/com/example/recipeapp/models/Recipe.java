@@ -31,12 +31,12 @@ public class Recipe {
         movieId = jsonObject.getInt("id");
     }
 
-    public static List<Recipe> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
-        List<Recipe> movies = new ArrayList<>();
-        for (int i = 0; i < movieJsonArray.length(); i++){
-            movies.add(new Recipe(movieJsonArray.getJSONObject(i)));
+    public static List<Recipe> fromJsonArray(JSONArray recipeJsonArray) throws JSONException {
+        List<Recipe> recipes = new ArrayList<>();
+        for (int i = 0; i < recipeJsonArray.length(); i++){
+            recipes.add(new Recipe(recipeJsonArray.getJSONObject(i)));
         }
-        return movies;
+        return recipes;
     }
 
     public String getPosterPath() {
