@@ -28,19 +28,19 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
 
 **Required Must-have Stories**
 
-* Users can see a list of popular recipes
-* Users can click on a recipe title to display the full recipe
-* Users can upload their own recipe with photos
-* Users can share their recipes on selected social media
-* Users can store their own recipes on device and upload it when network available
-* Users can search for a recipe by typing the meal name into a search box
+- [X] Users can see a list of popular recipes
+- [X] Users can click on a recipe title to display the full recipe
+- [ ] Users can upload their own recipe with photos
+- [ ] Users can share their recipes on selected social media
+- [ ] Users can store their own recipes on device and upload it when network available
+- [ ] Users can search for a recipe by typing the meal name into a search box
 
 **Optional Nice-to-have Stories**
 
-* Users can see the location of posts
-* Nearby restaurants which have the recipe you are looking for are displayed
-* Users can watch the video version recipes
-* Other basic information like rating, price and something else about such restaurants will be displayed
+- [ ] Users can see the location of posts
+- [ ] Nearby restaurants which have the recipe you are looking for are displayed
+- [ ] Users can watch the video version recipes
+- [ ] Other basic information like rating, price and something else about such restaurants will be displayed
 
 ### 2. Screen Archetypes
 
