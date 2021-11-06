@@ -42,6 +42,13 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
 - [ ] Users can watch the video version recipes
 - [ ] Other basic information like rating, price and something else about such restaurants will be displayed
 
+### App Walkthough GIF
+
+
+<img src= "https://i.imgur.com/JPXf9Ht.gif" width=250><br>
+
+
+
 ### 2. Screen Archetypes
 
 * Stream
