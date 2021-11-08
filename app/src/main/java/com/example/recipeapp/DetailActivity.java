@@ -37,7 +37,7 @@ public class DetailActivity extends MainActivity {
 
         Recipe recipe = Parcels.unwrap(getIntent().getParcelableExtra("recipe"));
         tvTitle.setText(recipe.getTitle());
-        tvOverview.setText(recipe.getOverview());
+        tvOverview.setText(recipe.getInstructions());
         Glide.with(this).load(recipe.getPosterPath()).into(ivRecipe);
 
     }

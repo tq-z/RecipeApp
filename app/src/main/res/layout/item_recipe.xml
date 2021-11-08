@@ -8,7 +8,7 @@
     android:background="#000000">
 
     <ImageView
-        android:id="@+id/ivPoster"
+        android:id="@+id/ivImage"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -25,7 +25,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        android:layout_toEndOf="@+id/ivPoster"
+        android:layout_toEndOf="@+id/ivImage"
         android:textColor="#FFFDE7"
         android:textSize="24sp"
         tools:text="Kate" />
@@ -37,7 +37,7 @@
         android:layout_below="@+id/tvTitle"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:layout_toEndOf="@+id/ivPoster"
+        android:layout_toEndOf="@+id/ivImage"
         android:ellipsize="end"
         android:maxLines="7"
         android:textColor="#FFFDE7"

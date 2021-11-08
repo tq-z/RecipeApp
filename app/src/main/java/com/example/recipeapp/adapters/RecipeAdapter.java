@@ -51,6 +51,11 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         // Bind the movie data into the ViewHolder
         holder.bind(recipe);
     }
+    // Clean all elements of the recycler
+    public void clear() {
+        recipes.clear();
+        notifyDataSetChanged();
+    }
 
     // Returns the total count of items in the list
     @Override
@@ -63,19 +68,19 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
         RelativeLayout container;
         TextView tvTitle;
         TextView tvOverview;
-        ImageView ivPoster;
+        ImageView ivImage;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
-            ivPoster = itemView.findViewById(R.id.ivPoster);
+            ivImage = itemView.findViewById(R.id.ivImage);
             container = itemView.findViewById(R.id.container);
         }
 
         public void bind(Recipe recipe) {
             tvTitle.setText(recipe.getTitle());
-            tvOverview.setText(recipe.getOverview());
+            tvOverview.setText(recipe.getInstructions());
             //String imageUrl;
             // if phone is in landscape
             // if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
@@ -87,10 +92,10 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
             //  }
 
 
-            Glide.with(context).load(recipe.getPosterPath()).into(ivPoster);
+            Glide.with(context).load(recipe.getPosterPath()).into(ivImage);
 
             // 1. Register click listener on the whole view
-            container.setOnClickListener(new View.OnClickListener() {
+           /* container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     // 2. Navigate to a new activity on tap
@@ -98,7 +103,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
                     i.putExtra("recipe", Parcels.wrap(recipe));
                     context.startActivity(i);
                 }
-            });
+            });*/
         }
     }
 }

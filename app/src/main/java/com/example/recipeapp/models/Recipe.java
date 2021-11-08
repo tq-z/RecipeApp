@@ -11,24 +11,24 @@ import java.util.List;
 @Parcel
 public class Recipe {
 
-    int movieId;
-    //String backdropPath;
-    String posterPath;
+    int recipeId;
+    String image;
     String title;
-    String overview;
-    double rating;
+    String instructions;
+    int readyInMinutes;
 
     // empty constructor needed by the Parceler library
     public Recipe() {}
 
     public Recipe(JSONObject jsonObject) throws JSONException {
         //backdropPath = jsonObject.getString("backdrop_path");
-        posterPath = jsonObject.getString("image");
+        image = jsonObject.getString("image");
         title = jsonObject.getString("title");
-        String unformattedSummary = jsonObject.getString("instructions");
-        overview= unformattedSummary.replaceAll("<.*?>", "");
-        rating = jsonObject.getDouble("readyInMinutes");
-        movieId = jsonObject.getInt("id");
+        String unformattedInstructions = jsonObject.getString("instructions");
+        instructions = unformattedInstructions.replaceAll("<.*?>", "");
+        instructions = instructions.replaceAll("&amp", "");
+        readyInMinutes = jsonObject.getInt("readyInMinutes");
+        recipeId = jsonObject.getInt("id");
     }
 
     public static List<Recipe> fromJsonArray(JSONArray recipeJsonArray) throws JSONException {
@@ -40,7 +40,7 @@ public class Recipe {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        return image;
     }
 
     //public String getBackdropPath() {
@@ -51,15 +51,15 @@ public class Recipe {
         return title;
     }
 
-    public String getOverview() {
-        return overview;
+    public String getInstructions() {
+        return instructions;
     }
 
-    public double getRating() {
-        return rating;
+    public double getReadyInMinutes() {
+        return readyInMinutes;
     }
 
-    public int getMovieId() {
-        return movieId;
+    public int getRecipeId() {
+        return recipeId;
     }
 }
