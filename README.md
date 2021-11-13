@@ -31,8 +31,8 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
 - [X] Users can see a list of popular recipes
 - [X] Users can click on a recipe title to display the full recipe
 - [ ] Users can upload their own recipe with photos
-- [ ] Users can share their recipes on selected social media
-- [ ] Users can store their own recipes on device and upload it when network available
+- [X] Users can swipe to refresh a new listing of recipes
+- [ ] Users can store their own recipes on device
 - [ ] Users can search for a recipe by typing the meal name into a search box
 
 **Optional Nice-to-have Stories**
@@ -43,8 +43,10 @@ Be the ultimate chef by finding popular recipes matched to your specifications. 
 - [ ] Other basic information like rating, price and something else about such restaurants will be displayed
 
 ### App Walkthough GIF
+Week 2:
+<img src= "https://i.imgur.com/8G9lQW2.gif" width=250><br>
 
-
+Week 1:
 <img src= "https://i.imgur.com/JPXf9Ht.gif" width=250><br>
 
 
